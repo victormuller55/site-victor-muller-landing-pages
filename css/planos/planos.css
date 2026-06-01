@@ -1,0 +1,191 @@
+/* —— Planos e orçamentos —— */
+.planos {
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+    border-top: 1px solid var(--slate-200);
+}
+
+.planos__inner {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: clamp(4rem, 10vw, 6rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.planos__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.planos__eyebrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.planos__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    max-width: 22ch;
+}
+
+.planos__lead {
+    font-size: clamp(1rem, 2vw, 1.0625rem);
+    line-height: 1.65;
+    color: var(--text-muted);
+    max-width: 46ch;
+}
+
+.planos__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+.plano-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 1.375rem 1.375rem;
+    border-radius: var(--radius);
+    text-align: left;
+    height: 100%;
+}
+
+.plano-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.plano-card__tipo {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    padding: 0.3rem 0.65rem;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate-500);
+    background: var(--slate-100);
+    border-radius: 999px;
+}
+
+.plano-card__nome {
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.plano-card__desc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+    margin-bottom: 1.25rem;
+}
+
+.plano-card__preco {
+    padding: 1rem 1.125rem;
+    margin-bottom: 1.25rem;
+    background: var(--accent-soft);
+    border: 1px solid rgba(5, 150, 105, 0.2);
+    border-radius: 0.875rem;
+}
+
+.plano-card__valor {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: var(--accent);
+}
+
+.plano-card__periodo {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--slate-700);
+}
+
+.plano-card__preco-label {
+    margin-top: 0.35rem;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--text-muted);
+}
+
+.plano-card__lista {
+    flex: 1;
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.plano-card__lista li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--slate-700);
+}
+
+.plano-card__check {
+    flex-shrink: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-top: 0.1rem;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6l2.5 2.5 4.5-5' stroke='%23059669' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 0.65rem;
+}
+
+.plano-card__cta {
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+    font-size: 0.9375rem;
+}
+
+.plano-card__cta-arrow {
+    margin-left: 0.15rem;
+    transition: transform var(--transition);
+}
+
+.plano-card__cta:hover .plano-card__cta-arrow {
+    transform: translateX(3px);
+}
+
+@media (max-width: 960px) {
+    .planos__grid {
+        grid-template-columns: 1fr;
+        max-width: 22rem;
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .plano-card {
+        padding: 1.25rem 1.125rem;
+    }
+
+    .plano-card__valor {
+        font-size: 1.5rem;
+    }
+}

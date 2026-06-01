@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Victor Muller — soluções profissionais e orçamentos sob medida.">
+    <title>Victor Muller</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/home/home.css">
+    <link rel="stylesheet" href="../css/sobre/sobre.css">
+    <link rel="stylesheet" href="../css/processo/processo.css">
+    <link rel="stylesheet" href="../css/depoimentos/depoimentos.css">
+    <link rel="stylesheet" href="../css/planos/planos.css">
+    <link rel="stylesheet" href="../css/contato/contato.css">
+</head>
+<body>
+    <header class="nav-float">
+        <div class="nav-float__cluster">
+            <div class="nav-float__dock nav-float__dock--desktop">
+                <a
+                    href="#"
+                    class="whatsapp-float btn btn--whatsapp js-whatsapp"
+                    id="btn-whatsapp-float"
+                    aria-label="Chamar no WhatsApp"
+                >
+                    <svg class="btn__icon whatsapp-float__icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    <span class="whatsapp-float__text">WhatsApp</span>
+                </a>
+                <nav class="nav glass fade-in" aria-label="Menu principal" style="--fade-delay: 0ms">
+                    <a href="#inicio" class="nav__brand fade-in" style="--fade-delay: 120ms">Victor Muller</a>
+                    <ul class="nav__links">
+                        <li><a href="#inicio" class="nav__link fade-in" style="--fade-delay: 220ms">Início</a></li>
+                        <li><a href="#sobre" class="nav__link fade-in" style="--fade-delay: 280ms">Sobre nós</a></li>
+                        <li><a href="#planos" class="nav__link fade-in" style="--fade-delay: 320ms">Orçamentos</a></li>
+                        <li><a href="#contato" class="nav__link fade-in" style="--fade-delay: 360ms">Contato</a></li>
+                        <li><a href="#" class="nav__link nav__link--cta fade-in js-whatsapp" style="--fade-delay: 400ms">WhatsApp</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="nav-mobile-bar">
+                <a
+                    href="#"
+                    class="nav-mobile-wa btn btn--whatsapp js-whatsapp"
+                    id="btn-whatsapp-mobile"
+                    aria-label="Chamar no WhatsApp"
+                >
+                    <svg class="btn__icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                </a>
+                <button
+                    type="button"
+                    class="nav-toggle glass"
+                    id="nav-toggle"
+                    aria-expanded="false"
+                    aria-controls="nav-drawer"
+                    aria-label="Abrir menu"
+                >
+                    <span class="nav-toggle__line" aria-hidden="true"></span>
+                    <span class="nav-toggle__line" aria-hidden="true"></span>
+                    <span class="nav-toggle__line" aria-hidden="true"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
+
+        <nav
+            class="nav-drawer glass"
+            id="nav-drawer"
+            aria-label="Menu mobile"
+            aria-hidden="true"
+        >
+            <div class="nav-drawer__head">
+                <span class="nav-drawer__brand">Victor Muller</span>
+                <button type="button" class="nav-drawer__close" id="nav-close" aria-label="Fechar menu">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <ul class="nav-drawer__links">
+                <li><a href="#inicio" class="nav-drawer__link">Início</a></li>
+                <li><a href="#sobre" class="nav-drawer__link">Sobre nós</a></li>
+                <li><a href="#planos" class="nav-drawer__link">Orçamentos</a></li>
+                <li><a href="#contato" class="nav-drawer__link">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero" id="inicio">
+        <div class="page-bg" aria-hidden="true">
+            <div class="page-bg__grid"></div>
+
+            <span class="page-bg__num page-bg__num--1">+248%</span>
+            <span class="page-bg__num page-bg__num--2">12,4k</span>
+            <span class="page-bg__num page-bg__num--3">↑ 94%</span>
+            <span class="page-bg__num page-bg__num--4">3,2×</span>
+            <span class="page-bg__num page-bg__num--5">+1.8M</span>
+
+            <figure class="page-bg__chart page-bg__chart--bars">
+                <svg viewBox="0 0 120 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="page-bg__bar" x="10" y="48" width="6" height="24" rx="1.5" fill="currentColor"/>
+                    <rect class="page-bg__bar" x="26" y="40" width="6" height="32" rx="1.5" fill="currentColor"/>
+                    <rect class="page-bg__bar" x="42" y="32" width="6" height="40" rx="1.5" fill="currentColor"/>
+                    <rect class="page-bg__bar" x="58" y="24" width="6" height="48" rx="1.5" fill="currentColor"/>
+                    <rect class="page-bg__bar" x="74" y="16" width="6" height="56" rx="1.5" fill="currentColor"/>
+                    <rect class="page-bg__bar" x="90" y="10" width="6" height="62" rx="1.5" fill="currentColor"/>
+                </svg>
+            </figure>
+
+            <figure class="page-bg__chart page-bg__chart--line">
+                <svg viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="page-bg__area" d="M0 62 L24 58 L48 48 L72 40 L96 28 L120 18 L144 8 L160 2 V80 H0 Z" fill="currentColor"/>
+                    <polyline class="page-bg__line" points="0,62 24,58 48,48 72,40 96,28 120,18 144,8 160,2" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+            </figure>
+        </div>
+
+        <div class="hero__content">
+            <p class="hero__eyebrow fade-in" style="--fade-delay: 200ms">Bem-vindo</p>
+            <h1 class="hero__title fade-in" style="--fade-delay: 320ms">Victor Muller</h1>
+            <p class="hero__subtitle fade-in" style="--fade-delay: 440ms">
+                Landing pages que convertem. Fale comigo no WhatsApp e receba um orçamento sob medida.
+            </p>
+
+            <div class="hero__actions fade-in" style="--fade-delay: 520ms">
+                <a
+                    href="#"
+                    class="btn btn--whatsapp btn--whatsapp-hero js-whatsapp"
+                    id="btn-whatsapp"
+                >
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Chamar no WhatsApp
+                </a>
+                <a href="#planos" class="btn glass btn--glass btn--secondary" id="btn-orcamentos">Verificar orçamentos</a>
+            </div>
+
+            <div class="stats" id="orcamentos">
+                <article class="stat-card glass fade-in" style="--fade-delay: 640ms">
+                    <p class="stat-card__value">+30</p>
+                    <p class="stat-card__label">Clientes satisfeitos</p>
+                </article>
+                <article class="stat-card glass fade-in" style="--fade-delay: 720ms">
+                    <p class="stat-card__value">2.847</p>
+                    <p class="stat-card__label">Vendas geradas em landing pages</p>
+                </article>
+                <article class="stat-card glass fade-in" style="--fade-delay: 800ms">
+                    <p class="stat-card__value">94%</p>
+                    <p class="stat-card__label">Taxa média de conversão</p>
+                </article>
+                <article class="stat-card glass fade-in" style="--fade-delay: 880ms">
+                    <p class="stat-card__value">72h</p>
+                    <p class="stat-card__label">Prazo médio de entrega</p>
+                </article>
+            </div>
+        </div>
+        <figure class="hero__visual">
+            <img
+                src="../assets/images/hero-devices.svg"
+                alt="Notebook e celular exibindo o site do cliente, com indicadores de visualizacoes, vendas, leads e clientes ao redor"
+                class="hero__image fade-in"
+                style="--fade-delay: 480ms"
+                width="520"
+                height="420"
+                loading="eager"
+                decoding="async"
+            >
+        </figure>
+    </main>
+
+    <section class="sobre" id="sobre" aria-labelledby="sobre-titulo">
+        <div class="sobre__inner">
+            <div class="sobre__intro">
+                <figure class="sobre__foto glass reveal">
+                    <img
+                        class="sobre__foto-img"
+                        src="../assets/images/eu.jpeg"
+                        alt="Foto de Victor Muller, desenvolvedor de sites e landing pages"
+                        width="280"
+                        height="280"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </figure>
+                <header class="sobre__header">
+                    <p class="sobre__eyebrow reveal">Sobre nós</p>
+                    <h2 class="sobre__title reveal" id="sobre-titulo">Prazer, eu sou o Victor</h2>
+                    <p class="sobre__lead reveal">
+                        Sou o <strong>Victor Muller</strong>, desenvolvedor de sites e landing pages com base em
+                        Curitiba. Trabalho de forma próxima e transparente — você fala comigo do início ao fim, sem
+                        intermediários.
+                    </p>
+                    <p class="sobre__bio reveal">
+                        Meu foco é criar páginas rápidas, bonitas e pensadas para converter: design limpo, integração
+                        com WhatsApp e textos que levam o visitante a entrar em contato. Assim seu negócio ganha mais
+                        confiança online e mais oportunidades de venda.
+                    </p>
+                </header>
+            </div>
+
+            <div class="sobre__grid">
+                <article class="sobre__card glass reveal">
+                    <h3 class="sobre__card-title">O que fazemos</h3>
+                    <p class="sobre__card-text">
+                        Criamos landing pages sob medida, integradas ao WhatsApp e prontas para campanhas de tráfego pago,
+                        com layout responsivo e identidade alinhada à sua marca.
+                    </p>
+                </article>
+                <article class="sobre__card glass reveal">
+                    <h3 class="sobre__card-title">Como trabalhamos</h3>
+                    <p class="sobre__card-text">
+                        Briefing rápido pelo WhatsApp, proposta transparente e entregas em poucos dias. Você acompanha
+                        cada etapa até a página ir ao ar.
+                    </p>
+                </article>
+                <article class="sobre__card glass reveal">
+                    <h3 class="sobre__card-title">Onde atuamos</h3>
+                    <p class="sobre__card-text">
+                        Atendimento online para todo o Brasil, com base em Curitiba (PR). Suporte próximo antes,
+                        durante e depois do lançamento.
+                    </p>
+                </article>
+            </div>
+
+            <div class="sobre__cta reveal">
+                <p class="sobre__cta-text">Pronto para começar? Chame no WhatsApp e receba um orçamento sem compromisso.</p>
+                <a href="#" class="btn btn--whatsapp js-whatsapp">
+                    <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Falar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="processo" id="processo" aria-labelledby="processo-titulo">
+        <div class="processo__inner">
+            <header class="processo__header">
+                <p class="processo__eyebrow reveal">Passo a passo</p>
+                <h2 class="processo__title reveal" id="processo-titulo">Do WhatsApp ao crescimento do seu negócio</h2>
+                <p class="processo__lead reveal">
+                    Um fluxo claro em quatro etapas — da primeira mensagem até a sua página gerando resultados.
+                </p>
+            </header>
+
+            <ol class="processo__steps">
+                <li class="processo__step glass reveal">
+                    <span class="processo__num" aria-hidden="true">01</span>
+                    <div class="processo__step-body">
+                        <h3 class="processo__step-title">Alinhamento no WhatsApp</h3>
+                        <p class="processo__step-text">
+                            Conversamos para entender suas expectativas, público, objetivos e o que a página precisa
+                            comunicar antes de qualquer linha de código.
+                        </p>
+                    </div>
+                </li>
+                <li class="processo__step glass reveal">
+                    <span class="processo__num" aria-hidden="true">02</span>
+                    <div class="processo__step-body">
+                        <h3 class="processo__step-title">Criação e publicação</h3>
+                        <p class="processo__step-text">
+                            Desenvolvimento do site, configuração da hospedagem e compra do domínio — tudo organizado
+                            para sua marca ir ao ar com segurança.
+                        </p>
+                    </div>
+                </li>
+                <li class="processo__step glass reveal">
+                    <span class="processo__num" aria-hidden="true">03</span>
+                    <div class="processo__step-body">
+                        <h3 class="processo__step-title">Entrega e suporte contínuo</h3>
+                        <p class="processo__step-text">
+                            Entrega do produto pronto para usar. Manutenção e alterações futuras conforme combinado
+                            (serviços adicionais pagos à parte).
+                        </p>
+                    </div>
+                </li>
+                <li class="processo__step glass reveal">
+                    <span class="processo__num" aria-hidden="true">04</span>
+                    <div class="processo__step-body">
+                        <h3 class="processo__step-title">Mais clientes e vendas para você</h3>
+                        <p class="processo__step-text">
+                            Com a página no ar, seu negócio passa a captar mais leads, vendas e clientes — o site
+                            trabalha a favor do seu crescimento.
+                        </p>
+                    </div>
+                </li>
+            </ol>
+
+        </div>
+    </section>
+
+    <section class="depoimentos" id="depoimentos" aria-labelledby="depoimentos-titulo">
+        <div class="depoimentos__inner">
+            <header class="depoimentos__header">
+                <p class="depoimentos__eyebrow reveal">Depoimentos</p>
+                <h2 class="depoimentos__title reveal" id="depoimentos-titulo">Quem já confiou no serviço</h2>
+                <p class="depoimentos__lead reveal">
+                    Relatos reais de clientes que contrataram landing pages e passaram a receber mais contatos pelo WhatsApp.
+                </p>
+            </header>
+
+            <div class="depoimentos__viewport reveal">
+                <div
+                    class="depoimentos__scroll"
+                    id="depoimentos-scroll"
+                    tabindex="0"
+                    role="region"
+                    aria-label="Lista de depoimentos de clientes. Role com o mouse ou arraste para o lado."
+                >
+                <ul class="depoimentos__list">
+                    <li>
+                        <article class="depoimento-card glass">
+                            <div class="depoimento-card__top">
+                                <img
+                                    class="depoimento-card__foto"
+                                    src="../assets/images/avatars/maria-silva.svg"
+                                    alt="Foto de Maria Silva"
+                                    width="56"
+                                    height="56"
+                                >
+                                <div class="depoimento-card__meta">
+                                    <h3 class="depoimento-card__nome">Maria Silva</h3>
+                                    <p class="depoimento-card__servico">Loja de cosméticos · Curitiba</p>
+                                    <div class="depoimento-card__estrelas" role="img" aria-label="Avaliação: 5 de 5 estrelas">
+                                        <span aria-hidden="true">★★★★★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <blockquote class="depoimento-card__texto">
+                                “A landing ficou linda e começou a chover mensagem no WhatsApp. Em duas semanas já recuperei o investimento.”
+                            </blockquote>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="depoimento-card glass">
+                            <div class="depoimento-card__top">
+                                <img
+                                    class="depoimento-card__foto"
+                                    src="../assets/images/avatars/joao-pedrosa.svg"
+                                    alt="Foto de João Pedrosa"
+                                    width="56"
+                                    height="56"
+                                >
+                                <div class="depoimento-card__meta">
+                                    <h3 class="depoimento-card__nome">João Pedrosa</h3>
+                                    <p class="depoimento-card__servico">Consultoria financeira · São Paulo</p>
+                                    <div class="depoimento-card__estrelas" role="img" aria-label="Avaliação: 5 de 5 estrelas">
+                                        <span aria-hidden="true">★★★★★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <blockquote class="depoimento-card__texto">
+                                “Processo super claro pelo WhatsApp. Site no ar com domínio e hospedagem sem eu precisar entender de técnico.”
+                            </blockquote>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="depoimento-card glass">
+                            <div class="depoimento-card__top">
+                                <img
+                                    class="depoimento-card__foto"
+                                    src="../assets/images/avatars/ana-costa.svg"
+                                    alt="Foto de Ana Costa"
+                                    width="56"
+                                    height="56"
+                                >
+                                <div class="depoimento-card__meta">
+                                    <h3 class="depoimento-card__nome">Ana Costa</h3>
+                                    <p class="depoimento-card__servico">Estúdio de pilates · Florianópolis</p>
+                                    <div class="depoimento-card__estrelas" role="img" aria-label="Avaliação: 5 de 5 estrelas">
+                                        <span aria-hidden="true">★★★★★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <blockquote class="depoimento-card__texto">
+                                “Página rápida no celular e botão do WhatsApp em destaque. Minhas matrículas aumentaram bastante no primeiro mês.”
+                            </blockquote>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="depoimento-card glass">
+                            <div class="depoimento-card__top">
+                                <img
+                                    class="depoimento-card__foto"
+                                    src="../assets/images/avatars/ricardo-mendes.svg"
+                                    alt="Foto de Ricardo Mendes"
+                                    width="56"
+                                    height="56"
+                                >
+                                <div class="depoimento-card__meta">
+                                    <h3 class="depoimento-card__nome">Ricardo Mendes</h3>
+                                    <p class="depoimento-card__servico">Marcenaria sob medida · Londrina</p>
+                                    <div class="depoimento-card__estrelas" role="img" aria-label="Avaliação: 4 de 5 estrelas">
+                                        <span aria-hidden="true">★★★★</span><span class="depoimento-card__estrela-vazia" aria-hidden="true">★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <blockquote class="depoimento-card__texto">
+                                “Entrega dentro do prazo combinado. Hoje recebo pedidos de orçamento direto pelo site, sem depender só de indicação.”
+                            </blockquote>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="depoimento-card glass">
+                            <div class="depoimento-card__top">
+                                <img
+                                    class="depoimento-card__foto"
+                                    src="../assets/images/avatars/carla-souza.svg"
+                                    alt="Foto de Carla Souza"
+                                    width="56"
+                                    height="56"
+                                >
+                                <div class="depoimento-card__meta">
+                                    <h3 class="depoimento-card__nome">Carla Souza</h3>
+                                    <p class="depoimento-card__servico">Nutricionista · Belo Horizonte</p>
+                                    <div class="depoimento-card__estrelas" role="img" aria-label="Avaliação: 5 de 5 estrelas">
+                                        <span aria-hidden="true">★★★★★</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <blockquote class="depoimento-card__texto">
+                                “Victor entendeu exatamente o que eu queria comunicar. A página transmite confiança e os leads chegam qualificados.”
+                            </blockquote>
+                        </article>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            <p class="depoimentos__hint reveal" aria-hidden="true">Use a roda do mouse ou arraste para o lado</p>
+        </div>
+    </section>
+
+    <section class="planos" id="planos" aria-labelledby="planos-titulo">
+        <div class="planos__inner">
+            <header class="planos__header">
+                <p class="planos__eyebrow reveal">Orçamentos</p>
+                <h2 class="planos__title reveal" id="planos-titulo">Escolha o plano ideal para o seu negócio</h2>
+                <p class="planos__lead reveal">
+                    Mensalidade fixa para manter seu site no ar, com hospedagem, domínio e suporte. O valor do projeto
+                    inicial combinamos no WhatsApp, de acordo com o que você precisa.
+                </p>
+            </header>
+
+            <div class="planos__grid">
+                <article class="plano-card glass reveal">
+                    <span class="plano-card__tipo">Página única</span>
+                    <h3 class="plano-card__nome">Início</h3>
+                    <p class="plano-card__desc">
+                        Uma página enxuta para apresentar sua oferta e levar o visitante direto ao WhatsApp ou formulário.
+                    </p>
+                    <div class="plano-card__preco">
+                        <p class="plano-card__valor">R$ 80<span class="plano-card__periodo">/mês</span></p>
+                        <p class="plano-card__preco-label">Hospedagem, domínio e manutenção</p>
+                    </div>
+                    <ul class="plano-card__lista">
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Página focada em conversão</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Layout adaptado ao celular</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Botão de contato no WhatsApp</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Mapa e informações de localização</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Configuração básica para buscadores</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Certificado SSL e domínio inclusos</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Pequenos ajustes mensais inclusos</li>
+                    </ul>
+                    <a
+                        href="#"
+                        class="btn glass btn--glass btn--secondary plano-card__cta js-whatsapp"
+                        data-whatsapp-message="Olá! Quero saber mais sobre o plano Início (página única)."
+                    >
+                        Verificar valores<span class="plano-card__cta-arrow" aria-hidden="true"> →</span>
+                    </a>
+                </article>
+
+                <article class="plano-card glass reveal">
+                    <span class="plano-card__tipo">Várias páginas</span>
+                    <h3 class="plano-card__nome">Completo</h3>
+                    <p class="plano-card__desc">
+                        Site com estrutura para contar sua história, listar serviços e reforçar a confiança do cliente.
+                    </p>
+                    <div class="plano-card__preco">
+                        <p class="plano-card__valor">R$ 150<span class="plano-card__periodo">/mês</span></p>
+                        <p class="plano-card__preco-label">Hospedagem, domínio e manutenção</p>
+                    </div>
+                    <ul class="plano-card__lista">
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Até 5 seções/páginas principais</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Identidade visual alinhada à marca</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Links para redes e WhatsApp</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Área de conteúdo ou notícias (opcional)</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Otimização ampliada para Google</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Métricas de acesso configuradas</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Suporte com prioridade na fila</li>
+                    </ul>
+                    <a
+                        href="#"
+                        class="btn glass btn--glass btn--secondary plano-card__cta js-whatsapp"
+                        data-whatsapp-message="Olá! Quero saber mais sobre o plano Completo (várias páginas)."
+                    >
+                        Verificar valores<span class="plano-card__cta-arrow" aria-hidden="true"> →</span>
+                    </a>
+                </article>
+
+                <article class="plano-card glass reveal">
+                    <span class="plano-card__tipo">Vendas online</span>
+                    <h3 class="plano-card__nome">Loja</h3>
+                    <p class="plano-card__desc">
+                        Vitrine digital com produtos, carrinho e meios de pagamento para quem já vende ou quer começar.
+                    </p>
+                    <div class="plano-card__preco">
+                        <p class="plano-card__valor">R$ 250<span class="plano-card__periodo">/mês</span></p>
+                        <p class="plano-card__preco-label">Hospedagem, domínio e manutenção</p>
+                    </div>
+                    <ul class="plano-card__lista">
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Cadastro de até 50 produtos</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Carrinho e finalização de pedido</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Pix e cartão no checkout</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Painel para você gerenciar pedidos</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Atalho para falar no WhatsApp</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Servidor preparado para tráfego da loja</li>
+                        <li><span class="plano-card__check" aria-hidden="true"></span>Acompanhamento técnico mensal</li>
+                    </ul>
+                    <a
+                        href="#"
+                        class="btn glass btn--glass btn--secondary plano-card__cta js-whatsapp"
+                        data-whatsapp-message="Olá! Quero saber mais sobre o plano Loja (vendas online)."
+                    >
+                        Verificar valores<span class="plano-card__cta-arrow" aria-hidden="true"> →</span>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="contato" id="contato" aria-labelledby="contato-titulo">
+        <div class="contato__inner">
+            <header class="contato__header">
+                <p class="contato__eyebrow reveal">Contato</p>
+                <h2 class="contato__title reveal" id="contato-titulo">Vamos conversar?</h2>
+                <p class="contato__lead reveal">
+                    Escolha o canal que preferir. Respondo pelo WhatsApp e e-mail o mais rápido possível.
+                </p>
+            </header>
+
+            <ul class="contato__lista">
+                <li class="reveal">
+                    <a
+                        class="contato__link glass"
+                        href="https://www.instagram.com/victomuller20/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span class="contato__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </span>
+                        <span class="contato__text">
+                            <span class="contato__label">Instagram</span>
+                            <span class="contato__user">@victomuller20</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="reveal">
+                    <a
+                        class="contato__link glass"
+                        href="https://www.linkedin.com/in/victormuller55/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span class="contato__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4.98 3.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM3.5 9h3v12h-3V9zm7 0h2.88v1.64h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59V21h-3v-5.34c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81V21h-3V9z"/>
+                            </svg>
+                        </span>
+                        <span class="contato__text">
+                            <span class="contato__label">LinkedIn</span>
+                            <span class="contato__user">victormuller55</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="reveal">
+                    <a class="contato__link glass js-whatsapp" href="#">
+                        <span class="contato__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </span>
+                        <span class="contato__text">
+                            <span class="contato__label">WhatsApp</span>
+                            <span class="contato__user">(41) 99591-9194</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="reveal">
+                    <a class="contato__link glass" href="mailto:victormuller050@gmail.com">
+                        <span class="contato__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="M3 7l9 6 9-6"/>
+                            </svg>
+                        </span>
+                        <span class="contato__text">
+                            <span class="contato__label">E-mail</span>
+                            <span class="contato__user">victormuller050@gmail.com</span>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <ul class="site-footer__social">
+                <li>
+                    <a
+                        class="site-footer__link"
+                        href="https://www.instagram.com/victomuller20/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span class="site-footer__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"/>
+                            </svg>
+                        </span>
+                        @victomuller20
+                    </a>
+                </li>
+                <li>
+                    <a
+                        class="site-footer__link"
+                        href="https://www.linkedin.com/in/victormuller55/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span class="site-footer__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M4.98 3.5a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5zM3.5 9h3v12h-3V9zm7 0h2.88v1.64h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59V21h-3v-5.34c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81V21h-3V9z"/>
+                            </svg>
+                        </span>
+                        victormuller55
+                    </a>
+                </li>
+                <li>
+                    <a class="site-footer__link js-whatsapp" href="#">
+                        <span class="site-footer__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </span>
+                        (41) 99591-9194
+                    </a>
+                </li>
+                <li>
+                    <a class="site-footer__link" href="mailto:victormuller050@gmail.com">
+                        <span class="site-footer__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="M3 7l9 6 9-6"/>
+                            </svg>
+                        </span>
+                        victormuller050@gmail.com
+                    </a>
+                </li>
+            </ul>
+            <p class="site-footer__copy">© <span id="ano-atual"></span> Victor Muller · Curitiba, PR</p>
+        </div>
+    </footer>
+
+    <script src="../js/config/whatsapp.config.js"></script>
+    <script src="../js/home/home.js"></script>
+    <script src="../js/sobre/sobre.js"></script>
+    <script src="../js/depoimentos/depoimentos.js"></script>
+</body>
+</html>
