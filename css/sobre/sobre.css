@@ -12,36 +12,18 @@
     padding: clamp(4rem, 10vw, 6rem) clamp(1.5rem, 4vw, 3rem);
 }
 
-.sobre__intro {
-    display: grid;
-    grid-template-columns: minmax(12rem, 17.5rem) 1fr;
-    gap: clamp(2rem, 5vw, 3rem);
-    align-items: center;
-    margin-bottom: 2.5rem;
-}
-
-.sobre__foto {
-    margin: 0;
-    padding: 0.375rem;
-    border-radius: var(--radius);
-    overflow: hidden;
-}
-
-.sobre__foto-img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: calc(var(--radius) - 0.25rem);
-}
-
 .sobre__header {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 1rem;
-    text-align: left;
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.sobre__header--center {
+    max-width: 42rem;
+    margin-inline: auto;
 }
 
 .sobre__eyebrow {
@@ -58,33 +40,20 @@
     line-height: 1.2;
     letter-spacing: -0.03em;
     color: var(--text);
-    max-width: 16ch;
+    max-width: 20ch;
 }
 
 .sobre__lead {
     font-size: clamp(1rem, 2vw, 1.125rem);
     line-height: 1.7;
     color: var(--text-muted);
-    max-width: 52ch;
-}
-
-.sobre__lead strong {
-    color: var(--text);
-    font-weight: 600;
-}
-
-.sobre__bio {
-    font-size: 0.9375rem;
-    line-height: 1.65;
-    color: var(--text-muted);
-    max-width: 52ch;
+    max-width: 46ch;
 }
 
 .sobre__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin-top: 2.5rem;
     text-align: left;
 }
 
@@ -139,25 +108,8 @@
 }
 
 @media (max-width: 768px) {
-    .sobre__intro {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
-    }
-
-    .sobre__header {
-        align-items: center;
-        text-align: center;
-    }
-
-    .sobre__foto {
-        max-width: 14rem;
-        width: 100%;
-    }
-
     .sobre__title,
-    .sobre__lead,
-    .sobre__bio {
+    .sobre__lead {
         max-width: none;
     }
 
