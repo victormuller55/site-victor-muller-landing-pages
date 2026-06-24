@@ -420,32 +420,32 @@ body.whatsapp-is-floating .nav__links > li:has(.nav__link--cta) {
     margin-top: 0.25rem;
 }
 
-/* —— Cards de métricas —— */
-.stats {
+/* —— Destaques do hero —— */
+.hero-highlights {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 0.5rem;
     margin-top: 1rem;
-    max-width: 20rem;
+    max-width: 22rem;
 }
 
-.stat-card {
-    padding: 0.625rem 0.75rem;
+.hero-highlight {
+    padding: 0.75rem 0.875rem;
     border-radius: 0.875rem;
 }
 
-.stat-card__value {
-    font-size: clamp(1.0625rem, 2.5vw, 1.25rem);
+.hero-highlight__title {
+    font-size: 0.8125rem;
     font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: -0.03em;
-    color: var(--text);
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--accent);
 }
 
-.stat-card__label {
-    margin-top: 0.125rem;
+.hero-highlight__text {
+    margin-top: 0.2rem;
     font-size: 0.6875rem;
-    line-height: 1.35;
+    line-height: 1.4;
     color: var(--text-muted);
 }
 
@@ -1042,9 +1042,9 @@ body.nav-menu-open {
         justify-content: center;
     }
 
-    .stats {
+    .hero-highlights {
         margin-inline: auto;
-        max-width: 17.5rem;
+        max-width: 19rem;
     }
 
     .hero__visual {

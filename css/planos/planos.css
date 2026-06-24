@@ -42,7 +42,44 @@
     font-size: clamp(1rem, 2vw, 1.0625rem);
     line-height: 1.65;
     color: var(--text-muted);
-    max-width: 46ch;
+    max-width: 52ch;
+}
+
+.planos__inclusos {
+    max-width: 52rem;
+    margin: 0 auto 2.5rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.planos__inclusos-titulo {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.875rem;
+}
+
+.planos__inclusos-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.625rem 1.25rem;
+}
+
+.planos__inclusos-lista li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--slate-700);
+    text-align: left;
 }
 
 .planos__grid {
@@ -90,9 +127,21 @@
 
 .plano-card__desc {
     font-size: 0.875rem;
-    line-height: 1.55;
+    line-height: 1.5;
     color: var(--text-muted);
+    margin-bottom: 0.625rem;
+}
+
+.plano-card__indicado {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--slate-600);
     margin-bottom: 1.25rem;
+}
+
+.plano-card__indicado strong {
+    color: var(--slate-700);
+    font-weight: 600;
 }
 
 .plano-card__preco {
@@ -109,6 +158,17 @@
     letter-spacing: -0.03em;
     line-height: 1.2;
     color: var(--accent);
+}
+
+.plano-card__valor-range {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--slate-700);
+}
+
+.plano-card__valor--mensal {
+    font-size: 1.375rem;
+    margin-top: 0.75rem;
 }
 
 .plano-card__periodo {
@@ -175,6 +235,13 @@
 @media (max-width: 960px) {
     .planos__grid {
         grid-template-columns: 1fr;
+        max-width: 26rem;
+        margin-inline: auto;
+    }
+
+    .planos__inclusos-lista {
+        flex-direction: column;
+        align-items: flex-start;
         max-width: 22rem;
         margin-inline: auto;
     }
