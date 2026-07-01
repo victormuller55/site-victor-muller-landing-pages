@@ -62,7 +62,7 @@
         if (!sections.length) return;
 
         var desktopLinks = document.querySelectorAll(
-            ".nav__links .nav__link:not(.nav__link--cta)"
+            ".nav__links .nav__link:not(.nav__link--cta):not(.nav__link--gestor)"
         );
         var drawerLinks = document.querySelectorAll(".nav-drawer__link");
         var indicator = document.querySelector(".nav__indicator");
@@ -111,7 +111,7 @@
         }
 
         function getActiveSectionId() {
-            var offset = window.innerWidth <= 768 ? 88 : 104;
+            var offset = window.innerWidth <= 1100 ? 88 : 104;
             var scrollPos = window.scrollY + offset;
             var currentId = sectionIds[0];
 
