@@ -2,9 +2,10 @@
 .site-footer {
     position: relative;
     z-index: 2;
-    background: var(--slate-100);
-    border-top: 1px solid var(--slate-200);
+    background: linear-gradient(180deg, var(--slate-900) 0%, #010a24 100%);
+    border-top: 1px solid rgba(0, 33, 242, 0.25);
     padding: clamp(3rem, 8vw, 4.5rem) clamp(1.5rem, 4vw, 3rem) 0;
+    color: rgba(255, 255, 255, 0.82);
 }
 
 .site-footer__inner {
@@ -28,7 +29,7 @@
 
 .site-footer__logo {
     display: block;
-    height: 2rem;
+    height: 2.75rem;
     width: auto;
     max-width: 9.5rem;
     object-fit: contain;
@@ -37,7 +38,7 @@
 .site-footer__tagline {
     font-size: 0.9375rem;
     line-height: 1.65;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.62);
     max-width: 34ch;
 }
 
@@ -70,7 +71,7 @@
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--accent);
+    color: #4d6bff;
     margin-bottom: 1rem;
 }
 
@@ -89,13 +90,13 @@
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.45;
-    color: var(--slate-700);
+    color: rgba(255, 255, 255, 0.72);
     text-decoration: none;
     transition: color var(--transition);
 }
 
 .site-footer__list a:hover {
-    color: var(--accent);
+    color: #4d6bff;
 }
 
 .site-footer__list a:focus-visible {
@@ -115,14 +116,14 @@
     font-weight: 600;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: var(--slate-500);
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .site-footer__item-text {
     font-size: 0.875rem;
     font-weight: 500;
     line-height: 1.45;
-    color: var(--slate-700);
+    color: rgba(255, 255, 255, 0.78);
 }
 
 .site-footer__bottom {
@@ -132,12 +133,12 @@
     gap: 1rem;
     flex-wrap: wrap;
     padding: 1.25rem 0;
-    border-top: 1px solid var(--slate-200);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .site-footer__copy {
     font-size: 0.8125rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.48);
 }
 
 .site-footer__social {
@@ -155,7 +156,7 @@
     padding: 0.5rem 0.75rem;
     font-size: 0.8125rem;
     font-weight: 500;
-    color: var(--slate-700);
+    color: rgba(255, 255, 255, 0.72);
     text-decoration: none;
     border-radius: 999px;
     transition:
@@ -164,8 +165,8 @@
 }
 
 .site-footer__social-link:hover {
-    color: var(--accent);
-    background: rgba(255, 255, 255, 0.85);
+    color: #4d6bff;
+    background: rgba(0, 33, 242, 0.18);
 }
 
 .site-footer__social-link:focus-visible {
@@ -176,7 +177,7 @@
 .site-footer__icon {
     flex-shrink: 0;
     display: flex;
-    color: var(--accent);
+    color: #4d6bff;
 }
 
 .site-footer__icon svg {
