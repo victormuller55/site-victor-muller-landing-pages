@@ -42,14 +42,17 @@
     initWhatsApp();
     initMobileNav();
     initNavScrollSpy();
+    initScrollStory();
+    initScrollVideos();
+    initContactForm();
 
     function initNavScrollSpy() {
         var sectionIds = [
             "inicio",
             "sobre",
+            "produtos",
             "time",
             "processo",
-            "confianca",
             "planos",
             "contato",
         ];
@@ -236,6 +239,249 @@
                 setOpen(false);
             }
         });
+    }
+
+    function initScrollStory() {
+        var section = document.querySelector(".scroll-story");
+        if (!section) return;
+
+        var lines = Array.prototype.slice.call(
+            section.querySelectorAll("[data-story-line]")
+        );
+        var dots = Array.prototype.slice.call(
+            section.querySelectorAll("[data-story-dot]")
+        );
+        if (!lines.length) return;
+
+        var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (reduced) {
+            section.classList.add("scroll-story--static");
+            return;
+        }
+
+        var ticking = false;
+        var count = lines.length;
+        var lastActive = -1;
+        var glow = section.querySelector(".scroll-story__glow");
+        var title = section.querySelector(".scroll-story__title");
+
+        function clamp01(value) {
+            return Math.min(1, Math.max(0, value));
+        }
+
+        function remap(value, start, end) {
+            if (end === start) return 1;
+            return clamp01((value - start) / (end - start));
+        }
+
+        function lineOpacity(index, progress, total) {
+            var slice = 1 / total;
+            var fade = slice * 0.16;
+            var gap = slice * 0.12;
+            var start = index * slice + (index === 0 ? 0 : gap / 2);
+            var end = (index + 1) * slice - (index === total - 1 ? 0 : gap / 2);
+
+            if (index === total - 1) {
+                end = 1;
+            }
+
+            if (progress < start || progress > end) {
+                return 0;
+            }
+
+            if (progress < start + fade) {
+                return (progress - start) / fade;
+            }
+
+            if (index !== total - 1 && progress > end - fade) {
+                return (end - progress) / fade;
+            }
+
+            return 1;
+        }
+
+        function setLine(line, opacity) {
+            var shown = opacity > 0.02;
+            line.style.opacity = shown ? opacity.toFixed(3) : "0";
+            line.style.visibility = shown ? "visible" : "hidden";
+            line.style.transform =
+                "translateY(" + ((1 - opacity) * 28).toFixed(2) + "px)";
+            line.classList.toggle("is-active", opacity > 0.55);
+        }
+
+        function flashGlow() {
+            if (!glow) return;
+            glow.style.setProperty(
+                "--glow-x",
+                (12 + Math.random() * 76).toFixed(1) + "%"
+            );
+            glow.style.setProperty(
+                "--glow-y",
+                (14 + Math.random() * 70).toFixed(1) + "%"
+            );
+            glow.style.setProperty(
+                "--glow-size",
+                (34 + Math.random() * 22).toFixed(1) + "vw"
+            );
+            glow.classList.remove("is-on");
+            void glow.offsetWidth;
+            glow.classList.add("is-on");
+        }
+
+        function render() {
+            ticking = false;
+            var travel = section.offsetHeight - window.innerHeight;
+            if (travel <= 0) return;
+
+            var progress = clamp01(
+                -section.getBoundingClientRect().top / travel
+            );
+
+            var shine = remap(progress, 0, 0.22);
+            var messages = remap(progress, 0.22, 1);
+
+            if (title) {
+                title.style.setProperty(
+                    "--shine",
+                    (-80 + shine * 180).toFixed(1) + "%"
+                );
+            }
+
+            if (messages <= 0) {
+                lines.forEach(function (line) {
+                    setLine(line, 0);
+                });
+                dots.forEach(function (dot, index) {
+                    dot.classList.toggle("is-active", index === 0);
+                });
+                lastActive = -1;
+                return;
+            }
+
+            var active = 0;
+            var highest = -1;
+
+            lines.forEach(function (line, index) {
+                var opacity = lineOpacity(index, messages, count);
+                setLine(line, opacity);
+                if (opacity > highest) {
+                    highest = opacity;
+                    active = index;
+                }
+            });
+
+            dots.forEach(function (dot, index) {
+                dot.classList.toggle("is-active", index === active);
+            });
+
+            if (active !== lastActive) {
+                if (lastActive !== -1) {
+                    flashGlow();
+                }
+                lastActive = active;
+            }
+        }
+
+        function onScroll() {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(render);
+        }
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onScroll);
+        render();
+    }
+
+    function initScrollVideos() {
+        var sections = Array.prototype.slice.call(
+            document.querySelectorAll("[data-scroll-video]")
+        );
+        if (!sections.length) return;
+
+        var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        sections.forEach(function (section) {
+            bindScrollVideo(section, reduced);
+        });
+    }
+
+    function initContactForm() {
+        var form = document.querySelector(".contato__form");
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+        });
+    }
+
+    function bindScrollVideo(section, reduced) {
+        var video = section.querySelector("video");
+        if (!video || !video.getAttribute("src")) {
+            section.classList.add("is-caption");
+            return;
+        }
+
+        video.muted = true;
+        video.loop = false;
+        video.playsInline = true;
+        video.preload = "auto";
+        video.pause();
+
+        var finished = false;
+
+        function freezeLastFrame() {
+            finished = true;
+            video.pause();
+            if (isFinite(video.duration) && video.duration > 0) {
+                video.currentTime = Math.max(video.duration - 0.05, 0);
+            }
+        }
+
+        function showCaption() {
+            section.classList.add("is-caption");
+        }
+
+        function playVideo() {
+            if (reduced || finished) return;
+            var promise = video.play();
+            if (promise && typeof promise.catch === "function") {
+                promise.catch(function () {
+                    showCaption();
+                });
+            }
+        }
+
+        function pauseVideo() {
+            if (finished) return;
+            video.pause();
+        }
+
+        video.addEventListener("ended", function () {
+            freezeLastFrame();
+            showCaption();
+        });
+        video.addEventListener("timeupdate", function () {
+            if (video.currentTime >= 2) showCaption();
+        });
+
+        if (reduced) {
+            showCaption();
+            return;
+        }
+
+        if ("IntersectionObserver" in window) {
+            new IntersectionObserver(
+                function (entries) {
+                    var entry = entries[0];
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
+                        playVideo();
+                    } else {
+                        pauseVideo();
+                    }
+                },
+                { threshold: [0, 0.45, 0.7, 1] }
+            ).observe(section);
+        }
     }
 
     var heroBtn = document.getElementById("btn-whatsapp");

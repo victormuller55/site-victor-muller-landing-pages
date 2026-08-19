@@ -1,12 +1,13 @@
 :root {
-  --accent: #0021f2;
-  --accent-soft: #e3e8ff;
-  --slate-900: #021343;
-  --slate-700: #0e2660;
-  --slate-600: #3d4d7a;
-  --slate-500: #5a6494;
-  --slate-200: #d5daef;
-  --slate-100: #eef0fb;
+  --accent: #00d14f;
+  --accent-soft: rgba(0, 209, 79, 0.16);
+  --bg: #070b08;
+  --slate-900: #f4f7f5;
+  --slate-700: rgba(255, 255, 255, 0.86);
+  --slate-600: rgba(255, 255, 255, 0.68);
+  --slate-500: rgba(255, 255, 255, 0.55);
+  --slate-200: rgba(255, 255, 255, 0.12);
+  --slate-100: rgba(255, 255, 255, 0.08);
   --white: #ffffff;
   --text: var(--slate-900);
   --text-muted: var(--slate-500);
@@ -32,16 +33,16 @@ body {
   font-family: var(--font);
   color: var(--text);
   background:
-    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(0, 33, 242, 0.08), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(2, 19, 67, 0.06), transparent 50%),
-    var(--slate-100);
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(0, 209, 79, 0.1), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 0%, rgba(0, 209, 79, 0.05), transparent 50%),
+    var(--bg);
   -webkit-font-smoothing: antialiased;
   line-height: 1.65;
 }
 
 .policy-header {
   border-bottom: 1px solid var(--slate-200);
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(7, 11, 8, 0.78);
   backdrop-filter: blur(12px);
 }
 
@@ -136,7 +137,7 @@ body {
 .policy__toc {
   margin: 0 0 2.5rem;
   padding: 1.25rem 1.5rem;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--slate-200);
   border-radius: var(--radius);
 }
@@ -248,7 +249,7 @@ body {
   margin: 0 0 1.5rem;
   border: 1px solid var(--slate-200);
   border-radius: 0.875rem;
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .policy__content table {

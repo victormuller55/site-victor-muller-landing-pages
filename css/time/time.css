@@ -2,7 +2,7 @@
 .time {
     position: relative;
     z-index: 2;
-    background: var(--white);
+    background: var(--bg);
     border-top: 1px solid var(--slate-200);
 }
 
@@ -115,5 +115,13 @@
 @media (max-width: 540px) {
     .time__grid {
         grid-template-columns: 1fr;
+    }
+
+    .time__cargo {
+        white-space: normal;
+    }
+
+    .time__member {
+        padding: 1rem 1.125rem;
     }
 }

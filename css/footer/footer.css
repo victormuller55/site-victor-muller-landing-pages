@@ -2,8 +2,8 @@
 .site-footer {
     position: relative;
     z-index: 2;
-    background: linear-gradient(180deg, var(--slate-900) 0%, #010a24 100%);
-    border-top: 1px solid rgba(0, 33, 242, 0.25);
+    background: var(--bg);
+    border-top: 1px solid var(--slate-200);
     padding: clamp(3rem, 8vw, 4.5rem) clamp(1.5rem, 4vw, 3rem) 0;
     color: rgba(255, 255, 255, 0.82);
 }
@@ -66,12 +66,26 @@
     border-radius: 999px;
 }
 
+.site-footer .btn--gestor {
+    color: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    box-shadow: none;
+}
+
+.site-footer .btn--gestor:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(74, 232, 122, 0.55);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
 .site-footer__heading {
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #4d6bff;
+    color: #4ae87a;
     margin-bottom: 1rem;
 }
 
@@ -96,7 +110,7 @@
 }
 
 .site-footer__list a:hover {
-    color: #4d6bff;
+    color: #4ae87a;
 }
 
 .site-footer__list a:focus-visible {
@@ -165,8 +179,8 @@
 }
 
 .site-footer__social-link:hover {
-    color: #4d6bff;
-    background: rgba(0, 33, 242, 0.18);
+    color: #4ae87a;
+    background: rgba(0, 209, 79, 0.18);
 }
 
 .site-footer__social-link:focus-visible {
@@ -177,7 +191,7 @@
 .site-footer__icon {
     flex-shrink: 0;
     display: flex;
-    color: #4d6bff;
+    color: #4ae87a;
 }
 
 .site-footer__icon svg {

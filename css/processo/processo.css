@@ -2,7 +2,7 @@
 .processo {
     position: relative;
     z-index: 2;
-    background: #ffffff;
+    background: var(--bg);
     border-top: 1px solid var(--slate-200);
 }
 
