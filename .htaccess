@@ -1,0 +1,6 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+
+RewriteCond %{THE_REQUEST} \s/pages/home\.html[\s?] [NC]
+RewriteRule ^pages/home\.html$ / [R=301,L]
