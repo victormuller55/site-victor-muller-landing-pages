@@ -386,15 +386,23 @@
       </div>
 
       <div class="hero__media">
-        <img
-          class="hero__photo"
-          src="../assets/images/homem.png"
-          alt="Homem sorrindo trabalhando no notebook"
-          width="1024"
-          height="341"
-          fetchpriority="high"
-          decoding="async"
-        />
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcset="../assets/images/homem_celular.png"
+            width="1086"
+            height="1448"
+          />
+          <img
+            class="hero__photo"
+            src="../assets/images/homem.png"
+            alt="Homem sorrindo trabalhando no notebook"
+            width="1024"
+            height="341"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </picture>
         <div class="hero__media-shade" aria-hidden="true"></div>
       </div>
 
@@ -498,6 +506,8 @@
           <video
             class="video-full__media"
             src="../assets/videos/phone.webm"
+            data-src-desktop="../assets/videos/phone.webm"
+            data-src-mobile="../assets/videos/celular_celular.webm"
             muted
             playsinline
             preload="auto"

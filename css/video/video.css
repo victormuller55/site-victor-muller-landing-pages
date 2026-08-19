@@ -315,8 +315,8 @@
     }
 
     .video-full--phone .video-full__media {
-        width: min(72vw, 320px);
-        height: min(52dvh, 460px);
+        width: min(88vw, 24rem);
+        height: min(58dvh, 32rem);
     }
 
     .products-intro {

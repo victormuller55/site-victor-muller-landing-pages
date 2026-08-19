@@ -416,7 +416,24 @@
 
     function bindScrollVideo(section, reduced) {
         var video = section.querySelector("video");
-        if (!video || !video.getAttribute("src")) {
+        if (!video) return;
+
+        function applySource() {
+            var mobile = window.matchMedia("(max-width: 768px)").matches;
+            var mobileSrc = video.getAttribute("data-src-mobile");
+            var desktopSrc = video.getAttribute("data-src-desktop");
+            var nextSrc =
+                mobile && mobileSrc
+                    ? mobileSrc
+                    : desktopSrc || video.getAttribute("src");
+            if (nextSrc && video.getAttribute("src") !== nextSrc) {
+                video.setAttribute("src", nextSrc);
+            }
+        }
+
+        applySource();
+
+        if (!video.getAttribute("src")) {
             section.classList.add("is-caption");
             return;
         }
