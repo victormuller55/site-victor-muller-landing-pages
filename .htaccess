@@ -4,3 +4,5 @@ RewriteEngine On
 
 RewriteCond %{THE_REQUEST} \s/pages/home\.html[\s?] [NC]
 RewriteRule ^pages/home\.html$ / [R=301,L]
+
+RewriteRule ^(link-na-bio|landing-page|criacao-de-sites|site-comercial|blog)$ /$1/ [R=301,L]

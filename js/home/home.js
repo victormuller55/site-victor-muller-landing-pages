@@ -441,7 +441,7 @@
         video.muted = true;
         video.loop = false;
         video.playsInline = true;
-        video.preload = "auto";
+        video.preload = "metadata";
         video.pause();
 
         var finished = false;
@@ -460,6 +460,7 @@
 
         function playVideo() {
             if (reduced || finished) return;
+            video.preload = "auto";
             var promise = video.play();
             if (promise && typeof promise.catch === "function") {
                 promise.catch(function () {

@@ -1,0 +1,201 @@
+/* Páginas de serviço — mesmo tema da home, layout de conteúdo */
+.skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -4rem;
+    z-index: 200;
+    padding: 0.65rem 1rem;
+    color: #070b08;
+    background: var(--accent);
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    top: 1rem;
+}
+
+.servico {
+    position: relative;
+    z-index: 1;
+    padding: calc(var(--nav-top) + 5.5rem) 1.25rem 4rem;
+    color: var(--white);
+}
+
+.servico__inner {
+    max-width: 44rem;
+    margin: 0 auto;
+}
+
+.servico__kicker {
+    margin-bottom: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+.servico__title {
+    margin: 0 0 1rem;
+    font-size: clamp(1.85rem, 5vw, 2.75rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.04em;
+}
+
+.servico__lead {
+    margin: 0 0 2rem;
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.servico h2 {
+    margin: 2.5rem 0 1rem;
+    font-size: clamp(1.35rem, 3vw, 1.65rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.servico h3 {
+    margin: 1.5rem 0 0.6rem;
+    font-size: 1.0625rem;
+    font-weight: 600;
+}
+
+.servico p,
+.servico li {
+    font-size: 1.03125rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.servico p + p {
+    margin-top: 1rem;
+}
+
+.servico ul,
+.servico ol {
+    margin: 0.75rem 0 0;
+    padding-left: 1.2rem;
+}
+
+.servico li + li {
+    margin-top: 0.45rem;
+}
+
+.servico a:not(.btn) {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.servico a:not(.btn):hover {
+    text-decoration: underline;
+}
+
+.servico__grid {
+    display: grid;
+    gap: 1rem;
+    margin: 1.25rem 0 0;
+}
+
+@media (min-width: 700px) {
+    .servico__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.servico__card {
+    padding: 1.15rem 1.2rem;
+    border-radius: var(--radius);
+}
+
+.servico__card h3 {
+    margin-top: 0;
+    color: var(--white);
+}
+
+.servico__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.servico__related {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-top: 0.75rem;
+}
+
+.servico__related a {
+    font-weight: 600;
+}
+
+.servico-faq {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.servico-faq details {
+    padding: 0.9rem 1.1rem;
+    border-radius: var(--radius);
+}
+
+.servico-faq summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--white);
+    list-style: none;
+}
+
+.servico-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.servico-faq details p {
+    margin-top: 0.7rem;
+}
+
+.plano-card__nome a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.plano-card__nome a:hover {
+    color: var(--accent);
+}
+
+.products-intro__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.25rem;
+    margin-top: 0.35rem;
+}
+
+.products-intro__links a {
+    color: var(--accent);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.products-intro__links a:hover {
+    text-decoration: underline;
+}
+
+.video-full__desc a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.video-full__desc a:hover {
+    text-decoration: underline;
+}
