@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="pt-BR">
-  <head>
+<html lang="pt-BR" class="is-loading">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta
@@ -49,6 +49,34 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      html.is-loading,
+      html.is-loading body {
+        overflow: hidden;
+        height: 100%;
+      }
+      .site-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 10000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #070b08;
+      }
+    </style>
+    <noscript>
+      <style>
+        html.is-loading,
+        html.is-loading body {
+          overflow: auto;
+          height: auto;
+        }
+        .site-loader {
+          display: none !important;
+        }
+      </style>
+    </noscript>
     <link rel="stylesheet" href="/css/home/home.css" />
     <link rel="stylesheet" href="/css/scroll-story/scroll-story.css" />
     <link rel="stylesheet" href="/css/video/video.css" />
@@ -102,8 +130,29 @@
         ]
       }
     </script>
-  </head>
-  <body>
+</head>
+<body>
+    <div
+      class="site-loader"
+      id="site-loader"
+      role="status"
+      aria-live="polite"
+      aria-busy="true"
+    >
+      <div class="site-loader__inner">
+        <img
+          class="site-loader__logo"
+          src="/assets/images/logos/logo_convertix_white.png"
+          alt="Convertix"
+          width="180"
+          height="48"
+        />
+        <div class="site-loader__bar" aria-hidden="true">
+          <span class="site-loader__bar-fill" id="site-loader-bar"></span>
+        </div>
+        <p class="site-loader__label">Carregando o site</p>
+      </div>
+    </div>
     <a class="skip-link" href="#inicio">Ir para o conteúdo</a>
     <header class="nav-float">
       <div class="nav-float__cluster">
@@ -581,7 +630,7 @@
             data-src-mobile="/assets/videos/celular_celular.webm"
             muted
             playsinline
-            preload="metadata"
+            preload="auto"
             title="Demonstração do link na bio da Convertix"
           ></video>
           <header class="video-full__copy video-full__copy--side">
@@ -616,8 +665,11 @@
             src="/assets/videos/notebook.webm"
             muted
             playsinline
-            preload="metadata"
+            preload="auto"
             title="Demonstração de landing page da Convertix"
+          ></video>
+          <header class="video-full__copy video-full__copy--side">
+            <p class="video-full__eyebrow">Landing page</p>
             <h2 class="video-full__title" id="video-landing-titulo">
               Feita para gerar contato e venda
             </h2>
@@ -647,8 +699,11 @@
             src="/assets/videos/notebook_2.webm"
             muted
             playsinline
-            preload="metadata"
+            preload="auto"
             title="Demonstração de site institucional da Convertix"
+          ></video>
+          <header class="video-full__copy video-full__copy--side">
+            <p class="video-full__eyebrow">Site institucional</p>
             <h2 class="video-full__title" id="video-institucional-titulo">
               Presença completa da sua empresa
             </h2>
@@ -846,7 +901,7 @@
             </p>
             <div class="plano-card__preco">
               <p class="plano-card__valor">
-                R$ 30<span class="plano-card__periodo">/mês</span>
+                R$ 29,99<span class="plano-card__periodo">/mês</span>
               </p>
               <p class="plano-card__preco-label">
                 Hospedagem, domínio e manutenção
@@ -892,7 +947,7 @@
             </p>
             <div class="plano-card__preco">
               <p class="plano-card__valor">
-                R$ 90<span class="plano-card__periodo">/mês</span>
+                R$ 89,99<span class="plano-card__periodo">/mês</span>
               </p>
               <p class="plano-card__preco-label">
                 Hospedagem, domínio e manutenção
@@ -941,7 +996,7 @@
             </p>
             <div class="plano-card__preco">
               <p class="plano-card__valor">
-                R$ 170<span class="plano-card__periodo">/mês</span>
+                R$ 169,99<span class="plano-card__periodo">/mês</span>
               </p>
               <p class="plano-card__preco-label">
                 Hospedagem, domínio e manutenção
@@ -1236,5 +1291,17 @@
     <script src="/js/config/whatsapp.config.js"></script>
     <script src="/js/home/home.js"></script>
     <script src="/js/sobre/sobre.js"></script>
-  </body>
+    <script>
+      window.setTimeout(function () {
+        var html = document.documentElement;
+        var loader = document.getElementById("site-loader");
+        html.classList.remove("is-loading");
+        if (loader) {
+          loader.classList.add("is-done");
+          loader.setAttribute("aria-busy", "false");
+          loader.setAttribute("aria-hidden", "true");
+        }
+      }, 22000);
+    </script>
+</body>
 </html>
