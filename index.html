@@ -1060,6 +1060,7 @@
                 name="nome"
                 autocomplete="name"
                 placeholder="Seu nome"
+                required
               />
             </label>
             <label class="contato__field">
@@ -1070,6 +1071,7 @@
                 name="email"
                 autocomplete="email"
                 placeholder="voce@email.com"
+                required
               />
             </label>
           </div>
@@ -1080,6 +1082,8 @@
               type="tel"
               name="whatsapp"
               autocomplete="tel"
+              inputmode="numeric"
+              maxlength="15"
               placeholder="(41) 99999-9999"
             />
           </label>
@@ -1092,6 +1096,7 @@
               placeholder="Como podemos ajudar?"
             ></textarea>
           </label>
+          <p class="contato__status" role="status" aria-live="polite"></p>
           <button class="btn btn--whatsapp contato__submit" type="submit">
             Enviar mensagem
           </button>
@@ -1289,6 +1294,7 @@
     </footer>
 
     <script src="/js/config/whatsapp.config.js"></script>
+    <script src="/js/config/gestor.config.js"></script>
     <script src="/js/home/home.js"></script>
     <script src="/js/sobre/sobre.js"></script>
     <script>

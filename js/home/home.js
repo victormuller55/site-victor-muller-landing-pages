@@ -578,8 +578,222 @@
         var form = document.querySelector(".contato__form");
         if (!form) return;
 
+        var submitBtn = form.querySelector(".contato__submit");
+        var statusEl = form.querySelector(".contato__status");
+        var sending = false;
+        var cachedFormularioId = null;
+        var defaultLabel = submitBtn ? submitBtn.textContent.trim() : "Enviar mensagem";
+
+        function apiBase() {
+            return String(window.CONVERTIX_GESTOR_API || "").replace(/\/+$/, "");
+        }
+
+        function slug() {
+            return String(window.CONVERTIX_LANDING_SLUG || "").trim();
+        }
+
+        function setStatus(type, message) {
+            if (!statusEl) return;
+            statusEl.textContent = message || "";
+            statusEl.classList.remove("is-ok", "is-err");
+            if (type === "ok") statusEl.classList.add("is-ok");
+            if (type === "err") statusEl.classList.add("is-err");
+        }
+
+        function field(name) {
+            return form.elements.namedItem(name);
+        }
+
+        function valueOf(name) {
+            var el = field(name);
+            return el && typeof el.value === "string" ? el.value.trim() : "";
+        }
+
+        function maskTelefone(value) {
+            var digits = String(value || "").replace(/\D/g, "").slice(0, 11);
+            if (digits.length <= 10) {
+                return digits
+                    .replace(/(\d{2})(\d)/, "($1) $2")
+                    .replace(/(\d{4})(\d)/, "$1-$2");
+            }
+            return digits
+                .replace(/(\d{2})(\d)/, "($1) $2")
+                .replace(/(\d{5})(\d)/, "$1-$2");
+        }
+
+        function initWhatsAppMask() {
+            var input = field("whatsapp") || field("telefone");
+            if (!input) return;
+
+            function applyMask() {
+                var masked = maskTelefone(input.value);
+                if (input.value !== masked) {
+                    input.value = masked;
+                }
+            }
+
+            input.addEventListener("input", applyMask);
+            input.addEventListener("blur", applyMask);
+            applyMask();
+        }
+
+        initWhatsAppMask();
+
+        function markInvalid(name, invalid) {
+            var el = field(name);
+            if (!el || !el.classList) return;
+            el.classList.toggle("is-invalid", !!invalid);
+            el.setAttribute("aria-invalid", invalid ? "true" : "false");
+        }
+
+        function validate() {
+            var nome = valueOf("nome");
+            var email = valueOf("email");
+            var emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            markInvalid("nome", !nome);
+            markInvalid("email", !emailOk);
+            if (!nome) {
+                setStatus("err", "Informe o seu nome.");
+                return false;
+            }
+            if (!emailOk) {
+                setStatus("err", "Informe um e-mail válido.");
+                return false;
+            }
+            return true;
+        }
+
+        function parseError(payload, fallback) {
+            if (payload && payload.message) return payload.message;
+            return fallback;
+        }
+
+        function requestJson(url, options) {
+            return fetch(url, options).then(function (response) {
+                return response.text().then(function (text) {
+                    var data = null;
+                    if (text) {
+                        try {
+                            data = JSON.parse(text);
+                        } catch (err) {
+                            data = null;
+                        }
+                    }
+                    if (!response.ok) {
+                        throw new Error(
+                            parseError(data, "Não foi possível enviar. Tente novamente.")
+                        );
+                    }
+                    return data;
+                });
+            });
+        }
+
+        function escolherFormulario(data) {
+            var lista = (data && data.formularios) || [];
+            var i;
+            for (i = 0; i < lista.length; i += 1) {
+                if (lista[i] && String(lista[i].nome || "").toLowerCase() === "contato") {
+                    return lista[i];
+                }
+            }
+            return lista[0] || null;
+        }
+
+        function carregarFormularioId() {
+            if (cachedFormularioId) {
+                return Promise.resolve(cachedFormularioId);
+            }
+
+            var base = apiBase();
+            var landingSlug = slug();
+            if (!base || !landingSlug) {
+                return Promise.reject(
+                    new Error("Configure a API e o slug em js/config/gestor.config.js")
+                );
+            }
+
+            return requestJson(
+                base + "/api/v1/landing-pages/publico?slug=" + encodeURIComponent(landingSlug),
+                { method: "GET", headers: { Accept: "application/json" } }
+            ).then(function (data) {
+                var formulario = escolherFormulario(data);
+                if (!formulario || !formulario.id) {
+                    throw new Error("Formulário da landing page não encontrado.");
+                }
+                cachedFormularioId = formulario.id;
+                return cachedFormularioId;
+            });
+        }
+
+        form.addEventListener("input", function (event) {
+            var target = event.target;
+            if (!target || !target.name) return;
+            if (target.classList.contains("is-invalid")) {
+                markInvalid(target.name, false);
+            }
+        });
+
         form.addEventListener("submit", function (e) {
             e.preventDefault();
+            if (sending) return;
+
+            setStatus("", "");
+            if (!validate()) return;
+
+            sending = true;
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Enviando...";
+            }
+
+            carregarFormularioId()
+                .then(function (formularioId) {
+                    var telefone = valueOf("telefone") || valueOf("whatsapp");
+                    return requestJson(
+                        apiBase() +
+                            "/api/v1/landing-pages/publico/leads?slug=" +
+                            encodeURIComponent(slug()),
+                        {
+                            method: "POST",
+                            headers: {
+                                Accept: "application/json",
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                formulario_id: formularioId,
+                                respostas: {
+                                    nome: valueOf("nome"),
+                                    email: valueOf("email"),
+                                    telefone: telefone,
+                                    mensagem: valueOf("mensagem"),
+                                },
+                            }),
+                        }
+                    );
+                })
+                .then(function () {
+                    form.reset();
+                    ["nome", "email", "whatsapp", "telefone", "mensagem"].forEach(
+                        function (name) {
+                            markInvalid(name, false);
+                        }
+                    );
+                    setStatus("ok", "Mensagem enviada. Retornamos em breve.");
+                })
+                .catch(function (err) {
+                    setStatus(
+                        "err",
+                        (err && err.message) || "Não foi possível enviar. Tente novamente."
+                    );
+                })
+                .then(function () {
+                    sending = false;
+                    if (submitBtn) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = defaultLabel;
+                    }
+                });
         });
     }
 
